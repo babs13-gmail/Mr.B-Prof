@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr.B Dev Web - Apprends le développement web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fond animé -->
+    <div class="animated-bg">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">MR.B</span>
+                <span class="logo-accent">DEV WEB</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#courses" class="nav-link">Cours</a></li>
+                <li><a href="#editor" class="nav-link">Éditeur</a></li>
+                <li><a href="#exercises" class="nav-link">Exercices</a></li>
+                <li><a href="#snippets" class="nav-link">Snippets</a></li>
+                <li><a href="#progress" class="nav-link">Progression</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" title="Changer de thème">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Deviens un</span>
+                    <span class="title-gradient">DÉVELOPPEUR WEB</span>
+                    <span class="title-line">avec Mr.B</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Apprends HTML, CSS & JavaScript gratuitement avec des cours interactifs, 
+                    des exercices pratiques et un éditeur de code en temps réel.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Cours</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Exercices</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Possibilités</span>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="scrollToSection('courses')">
+                    <span>Commencer à apprendre</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="hero-illustration">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="window-title">index.html</span>
+                    </div>
+                    <div class="window-code">
+                        <code>&lt;<span class="tag">h1</span>&gt;Hello World!&lt;/<span class="tag">h1</span>&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Cours -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📚 Les Cours</h2>
+                <p class="section-subtitle">Maîtrise les bases du développement web étape par étape</p>
+            </div>
+
+            <div class="courses-grid">
+                <!-- Cours HTML -->
+                <div class="course-card" data-course="html">
+                    <div class="course-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L3 4v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V4l-9-2z" fill="#E34F26"/>
+                        </svg>
+                    </div>
+                    <h3 class="course-title">HTML</h3>
+                    <p class="course-description">
+                        Structure et squelette de tes pages web
+                    </p>
+                    <div class="course-meta">
+                        <span class="course-lessons">📖 10 leçons</span>
+                        <span class="course-level">🟢 Débutant</span>
+                    </div>
+                    <button class="btn-course" onclick="openCourse('html')">Commencer le cours</button>
+                </div>
+
+                <!-- Cours CSS -->
+                <div class="course-card" data-course="css">
+                    <div class="course-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L3 4v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V4l-9-2z" fill="#1572B6"/>
+                        </svg>
+                    </div>
+                    <h3 class="course-title">CSS</h3>
+                    <p class="course-description">
+                        Design et style de tes pages web
+                    </p>
+                    <div class="course-meta">
+                        <span class="course-lessons">📖 12 leçons</span>
+                        <span class="course-level">🟡 Intermédiaire</span>
+                    </div>
+                    <button class="btn-course" onclick="openCourse('css')">Commencer le cours</button>
+                </div>
+
+                <!-- Cours JavaScript -->
+                <div class="course-card" data-course="js">
+                    <div class="course-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                            <rect width="24" height="24" rx="4" fill="#F7DF1E"/>
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#000" font-size="16" font-weight="bold">JS</text>
+                        </svg>
+                    </div>
+                    <h3 class="course-title">JavaScript</h3>
+                    <p class="course-description">
+                        Interactivité et logique de tes pages
+                    </p>
+                    <div class="course-meta">
+                        <span class="course-lessons">📖 15 leçons</span>
+                        <span class="course-level">🔴 Avancé</span>
+                    </div>
+                    <button class="btn-course" onclick="openCourse('js')">Commencer le cours</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Cours -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCourseModal()">&times;</span>
+            <div id="courseContent"></div>
+        </div>
+    </div>
+
+    <!-- Section Éditeur de Code -->
+    <section id="editor" class="editor-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💻 Éditeur de Code Interactif</h2>
+                <p class="section-subtitle">Écris ton code et vois le résultat en temps réel</p>
+            </div>
+
+            <div class="editor-container">
+                <div class="editor-tabs">
+                    <button class="tab-btn active" data-tab="html-editor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        HTML
+                    </button>
+                    <button class="tab-btn" data-tab="css-editor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        CSS
+                    </button>
+                    <button class="tab-btn" data-tab="js-editor">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                        JavaScript
+                    </button>
+                </div>
+
+                <div class="editor-wrapper">
+                    <div class="code-editors">
+                        <textarea id="html-editor" class="code-editor active" placeholder="<!-- Écris ton HTML ici -->"></textarea>
+                        <textarea id="css-editor" class="code-editor" placeholder="/* Écris ton CSS ici */"></textarea>
+                        <textarea id="js-editor" class="code-editor" placeholder="// Écris ton JavaScript ici"></textarea>
+                    </div>
+
+                    <div class="editor-actions">
+                        <button class="btn-run" onclick="runCode()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Exécuter le code
+                        </button>
+                        <button class="btn-clear" onclick="clearCode()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                            </svg>
+                            Effacer
+                        </button>
+                    </div>
+
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <span>Aperçu</span>
+                        </div>
+                        <iframe id="preview" class="preview-frame"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Exercices -->
+    <section id="exercises" class="exercises">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Exercices Pratiques</h2>
+                <p class="section-subtitle">Mets en pratique tes connaissances avec des défis</p>
+            </div>
+
+            <div class="exercises-grid" id="exercisesList"></div>
+        </div>
+    </section>
+
+    <!-- Modal Exercice -->
+    <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeExerciseModal()">&times;</span>
+            <div id="exerciseContent"></div>
+        </div>
+    </div>
+
+    <!-- Section Progression -->
+    <section id="progress" class="progress-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🏆 Ta Progression</h2>
+                <p class="section-subtitle">Suis ton évolution et débloque des badges</p>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <h3>📊 Statistiques</h3>
+                    <div class="stats-list">
+                        <div class="stat-row">
+                            <span>Points totaux</span>
+                            <span class="stat-value" id="totalPoints">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Exercices réussis</span>
+                            <span class="stat-value" id="completedExercises">0 / 15</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Niveau actuel</span>
+                            <span class="stat-value" id="currentLevel">Débutant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <h3>🎖️ Badges</h3>
+                    <div class="badges-grid" id="badgesContainer">
+                        <div class="badge locked" data-badge="first-step">
+                            <div class="badge-icon">🚀</div>
+                            <div class="badge-name">Premier Pas</div>
+                            <div class="badge-desc">Termine ton premier exercice</div>
+                        </div>
+                        <div class="badge locked" data-badge="html-master">
+                            <div class="badge-icon">📝</div>
+                            <div class="badge-name">Maître HTML</div>
+                            <div class="badge-desc">Réussis tous les exercices HTML</div>
+                        </div>
+                        <div class="badge locked" data-badge="css-artist">
+                            <div class="badge-icon">🎨</div>
+                            <div class="badge-name">Artiste CSS</div>
+                            <div class="badge-desc">Réussis tous les exercices CSS</div>
+                        </div>
+                        <div class="badge locked" data-badge="js-ninja">
+                            <div class="badge-icon">⚡</div>
+                            <div class="badge-name">Ninja JS</div>
+                            <div class="badge-desc">Réussis tous les exercices JavaScript</div>
+                        </div>
+                        <div class="badge locked" data-badge="perfectionist">
+                            <div class="badge-icon">💎</div>
+                            <div class="badge-name">Perfectionniste</div>
+                            <div class="badge-desc">Réussis tous les exercices</div>
+                        </div>
+                        <div class="badge locked" data-badge="speedrun">
+                            <div class="badge-icon">🏃</div>
+                            <div class="badge-name">Speedrunner</div>
+                            <div class="badge-desc">Termine 5 exercices en 1 heure</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card full-width">
+                    <h3>📈 Progression par cours</h3>
+                    <div class="course-progress">
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>HTML</span>
+                                <span class="progress-percent" id="htmlProgress">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="htmlBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>CSS</span>
+                                <span class="progress-percent" id="cssProgress">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="cssBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-info">
+                                <span>JavaScript</span>
+                                <span class="progress-percent" id="jsProgress">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="jsBar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Snippets de Code -->
+    <section id="snippets" class="snippets-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📦 Bibliothèque de Snippets</h2>
+                <p class="section-subtitle">Des morceaux de code prêts à l'emploi - Copie et utilise !</p>
+            </div>
+
+            <div class="snippets-tabs">
+                <button class="snippet-tab active" data-category="html">HTML</button>
+                <button class="snippet-tab" data-category="css">CSS</button>
+                <button class="snippet-tab" data-category="js">JavaScript</button>
+            </div>
+
+            <div class="snippets-grid" id="snippetsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">👋 À Propos de Mr.B</h2>
+                <p class="section-subtitle">Qui suis-je et pourquoi j'ai créé cette plateforme ?</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-hero">
+                    <div class="about-avatar">
+                        <div class="avatar-circle">
+                            <span class="avatar-text">MR.B</span>
+                        </div>
+                    </div>
+                    <div class="about-intro">
+                        <h3>Salut ! Je suis Babacar Diouf, alias Mr.B 👋</h3>
+                        <p class="intro-text">
+                            Jeune développeur web autodidacte passionné de <strong>Mbour, Sénégal</strong> 🇸🇳
+                        </p>
+                        <p class="intro-text">
+                            J'ai appris à coder par moi-même en lisant des livres et en pratiquant 
+                            sans relâche. HTML, CSS, JavaScript, Python... Chaque ligne de code 
+                            est une nouvelle aventure !
+                        </p>
+                        <p class="intro-highlight">
+                            <strong>Ma mission :</strong> Partager mes connaissances et rendre l'apprentissage 
+                            du développement web accessible à tous, en français 🚀
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">🌍</div>
+                        <h4>Mon Parcours</h4>
+                        <p>
+                            Jeune passionné de technologie originaire de Mbour, Sénégal, j'ai découvert 
+                            le monde fascinant du développement web de manière autodidacte.
+                        </p>
+                        <p>
+                            Tout a commencé avec un livre sur le HTML, puis la curiosité m'a poussé 
+                            vers le CSS, JavaScript, Python et bien plus encore. Chaque page lue, 
+                            chaque ligne de code écrite m'a rapproché de mon rêve : créer des 
+                            expériences numériques qui inspirent et aident les autres.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+        
